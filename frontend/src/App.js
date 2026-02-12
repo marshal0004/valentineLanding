@@ -1,49 +1,38 @@
-import { useEffect } from "react";
-import "@/App.css";
+import React from "react";
+import "@/index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+import { Toaster } from "sonner";
+import PasswordGate from "@/pages/PasswordGate";
+import Experience from "@/pages/Experience";
+import AdminLayout from "@/pages/admin/AdminLayout";
+import Dashboard from "@/pages/admin/Dashboard";
+import SectionEditor from "@/pages/admin/SectionEditor";
+import Settings from "@/pages/admin/Settings";
+import QRCodePage from "@/pages/admin/QRCodePage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ background: '#0a0a0a', minHeight: '100vh' }}>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          style: {
+            background: 'rgba(26, 10, 16, 0.9)',
+            border: '1px solid rgba(255, 45, 85, 0.3)',
+            color: '#f4e0e0',
+            backdropFilter: 'blur(12px)',
+          },
+        }}
+      />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
+          <Route path="/" element={<PasswordGate />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="section/:id" element={<SectionEditor />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="qr" element={<QRCodePage />} />
           </Route>
         </Routes>
       </BrowserRouter>
