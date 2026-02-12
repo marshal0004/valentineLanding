@@ -1,0 +1,155 @@
+{
+  "identity": {
+    "name": "ValentineMemories3D",
+    "persona": "E1: The Anti-AI Designer",
+    "tone": "Cinematic, deeply emotional, intimate, immersive, unforgettable.",
+    "aesthetics": "Dark Valentine, Glassmorphism, 3D Interactive, Particle-heavy."
+  },
+  "typography": {
+    "headings": {
+      "family": "'Great Vibes', cursive",
+      "usage": "Hero titles, Section headers, Romantic quotes",
+      "weights": ["400"],
+      "fallback": "serif"
+    },
+    "body": {
+      "family": "'Cormorant Garamond', serif",
+      "usage": "Paragraphs, Love letters, Descriptions",
+      "weights": ["300", "400", "600"],
+      "fallback": "serif"
+    },
+    "accents": {
+      "family": "'Dancing Script', cursive",
+      "usage": "Dates, Captions, Handwritten notes",
+      "weights": ["400", "700"],
+      "fallback": "cursive"
+    },
+    "admin_ui": {
+      "family": "'Inter', sans-serif",
+      "usage": "Admin dashboard UI only (for legibility)",
+      "weights": ["400", "500", "600"]
+    }
+  },
+  "colors": {
+    "palette": {
+      "background": "#0a0a0a",
+      "surface": "#1a0a10",
+      "primary": "#ff2d55",
+      "primary_dark": "#c41e3a",
+      "text_main": "#f4e0e0",
+      "text_muted": "#b0a0a0",
+      "accent_gold": "#d4af37",
+      "error": "#ef4444",
+      "success": "#22c55e"
+    },
+    "gradients": {
+      "hero_glow": "radial-gradient(circle at center, rgba(255, 45, 85, 0.15) 0%, rgba(10, 10, 10, 0) 70%)",
+      "glass_surface": "linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)",
+      "love_letter": "linear-gradient(to bottom, #fdfbf7 0%, #f4e0e0 100%)"
+    },
+    "glassmorphism": {
+      "card": {
+        "bg": "rgba(26, 10, 16, 0.6)",
+        "border": "rgba(255, 45, 85, 0.2)",
+        "backdrop_blur": "12px",
+        "shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.37)"
+      },
+      "input": {
+        "bg": "rgba(0, 0, 0, 0.3)",
+        "border": "rgba(255, 45, 85, 0.3)"
+      }
+    }
+  },
+  "layout_strategies": {
+    "experience_page": {
+      "type": "Single Page Scrollytelling",
+      "structure": [
+        "Hero (3D Heart + Countdown)",
+        "Memory Sections (Alternating Layouts)",
+        "Love Letter Reveal"
+      ],
+      "spacing": "min-h-screen for each section",
+      "scroll_behavior": "Snap scrolling or Smooth Lenis scroll"
+    },
+    "admin_dashboard": {
+      "type": "Sidebar + Content Area",
+      "grid": "Bento Grid (Grid cols 1 md:cols-3 lg:cols-4)",
+      "card_style": "Glassmorphism panels"
+    },
+    "memory_section": {
+      "layouts": [
+        "Full Screen Photo with Floating Text",
+        "Split Screen (Image Left, Text Right)",
+        "Polaroid Scatter (Multiple small images)",
+        "Parallax Scroll (Background image fixed, text moves)"
+      ]
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "rounded-full px-8 py-3 bg-[#ff2d55] text-white hover:bg-[#c41e3a] transition-all duration-300 shadow-[0_0_20px_rgba(255,45,85,0.4)] hover:shadow-[0_0_30px_rgba(255,45,85,0.6)]",
+      "ghost": "text-[#ff2d55] hover:text-[#f4e0e0] transition-colors underline-offset-4 hover:underline",
+      "glass": "backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 text-white rounded-lg transition-all"
+    },
+    "inputs": {
+      "style": "bg-black/30 border border-white/10 focus:border-[#ff2d55] rounded-lg px-4 py-3 text-[#f4e0e0] placeholder:text-white/20 transition-all outline-none focus:ring-1 focus:ring-[#ff2d55]"
+    },
+    "cards": {
+      "memory": "relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 backdrop-blur-sm hover:border-[#ff2d55]/50 transition-all duration-500 group"
+    },
+    "typography_components": {
+      "hero_title": "font-great-vibes text-6xl md:text-8xl lg:text-9xl text-[#f4e0e0] drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]",
+      "section_title": "font-great-vibes text-5xl md:text-7xl text-[#ff2d55] mb-8",
+      "body_text": "font-cormorant text-xl md:text-2xl leading-relaxed text-[#f4e0e0]/90",
+      "date_label": "font-dancing text-lg text-[#ff2d55]/80"
+    }
+  },
+  "motion": {
+    "libraries": ["framer-motion", "@react-three/fiber", "@react-three/drei", "tsparticles"],
+    "interactions": {
+      "hover": "Scale 1.05, Glow intensification",
+      "scroll": "Fade in up, Parallax y-axis movement",
+      "entrance": "Staggered fade in",
+      "heart_beat": "Scale 1 -> 1.1 -> 1 (loop)"
+    },
+    "3d_scenes": {
+      "intro_heart": "InstancedMesh floating hearts or Single high-poly glass heart",
+      "particles": "Floating rose petals (falling slowly) + glowing dust"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.unsplash.com/photo-1758810410699-2dc1daec82dc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxyb21hbnRpYyUyMGNvdXBsZSUyMHN1bnNldCUyMHNpbGhvdWV0dGUlMjBsb3ZlfGVufDB8fHx8MTc3MDg2MDA5NHww&ixlib=rb-4.1.0&q=85",
+      "petals_texture": "https://images.unsplash.com/photo-1558473720-cf2dbe8a1f91?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwxfHxyZWQlMjByb3NlJTIwcGV0YWxzJTIwZmFsbGluZyUyMGJsYWNrJTIwYmFja2dyb3VuZCUyMHRleHR1cmV8ZW58MHx8fHwxNzcwODYwMDk1fDA&ixlib=rb-4.1.0&q=85",
+      "couple_moment_1": "https://images.unsplash.com/photo-1620455921172-84380f7333af?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHw0fHxyb21hbnRpYyUyMGNvdXBsZSUyMHN1bnNldCUyMHNpbGhvdWV0dGUlMjBsb3ZlfGVufDB8fHx8MTc3MDg2MDA5NHww&ixlib=rb-4.1.0&q=85",
+      "couple_moment_2": "https://images.unsplash.com/photo-1620455970942-5fca5840d5ee?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxyb21hbnRpYyUyMGNvdXBsZSUyMHN1bnNldCUyMHNpbGhvdWV0dGUlMjBsb3ZlfGVufDB8fHx8MTc3MDg2MDA5NHww&ixlib=rb-4.1.0&q=85"
+    },
+    "icons": {
+      "library": "lucide-react",
+      "style": "Thin stroke (1.5px), white/80"
+    }
+  },
+  "universal_guidelines": {
+    "do_not_use": [
+      "Pure white backgrounds (#ffffff)",
+      "Default browser fonts",
+      "Bright blues or greens (except success states)",
+      "Standard Shadcn cards without customization"
+    ],
+    "must_do": [
+      "Use 'sonner' for toasts",
+      "Implement data-testid attributes for all interactive elements",
+      "Ensure text contrast meets WCAG AA (using light text on dark bg)",
+      "Add subtle noise texture to background to prevent banding"
+    ]
+  },
+  "implementation_instructions": {
+    "frontend": [
+      "Install dependencies: framer-motion @react-three/fiber @react-three/drei tsparticles @tsparticles/react @tsparticles/slim lucide-react sonner clsx tailwind-merge",
+      "Configure Tailwind to add 'Great Vibes', 'Cormorant Garamond', 'Dancing Script' to theme.fontFamily",
+      "Create a 'Layout' component that handles the persistent particles background",
+      "Use 'Canvas' from R3F only in Hero or specific 3D sections to manage performance",
+      "Ensure all inputs/forms in Admin are usable but follow the dark theme"
+    ]
+  }
+}
